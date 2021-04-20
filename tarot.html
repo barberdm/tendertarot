@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS-->
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
+    <style>
+        #leftSide {
+            height: 100%;
+        }
+
+        #rightSide {
+            vertical-align: top;
+            height: 100%;
+            border-left: 1px solid;
+        }
+
+        #rightReading {
+            height: 100%;
+            border-left: 1px black solid;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .right7to10 {
+            width: 78px;
+            height: 105px;
+            border: 1px solid #73AD21;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .right2 {
+            align-self: center;
+            width: 78px;
+            height: 105px;
+            margin-left: 10px;
+            margin-top: -115px;
+            border: 1px solid #73AD21;
+            transform: rotate(270deg);
+        }
+
+        #rightSide01 img:hover {
+            z-index: 9999;
+        }
+
+        img {
+            width: 75px;
+            height: 100px;
+            cursor: pointer;
+        }
+        #leftSide>img:hover {
+             top: -15px;
+            margin-left: +75px;
+            border: 1px solid #73AD21;
+            transform: rotate(270deg);
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-content">
+            <div class="col">
+                <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="showInitialCardPosition();">Show
+                    Card</button>
+                <button type="button" class="btn btn-primary btn-sm ml-auto" onclick="shuffleCardPosition();">Shuffle
+                    Deck</button>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col ml-auto ">
+                <div id="leftSide">
+                    <img id="c00" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-fool.png" alt="">
+                    <img id="c01" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-magician.png" alt="">
+                    <img id="c02" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-high-priestess.png" alt="">
+                    <img id="c03" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-empress.png" alt="">
+                    <img id="c04" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-emperor.png" alt="">
+                    <img id="c05" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-heirophant.png" alt="">
+                    <img id="c06" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-lovers.png" alt="">
+                    <img id="c07" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-chariot.png" alt="">
+                    <img id="c08" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/strength.png" alt="">
+                    <img id="c09" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/wheel-of-fortune.png" alt="">
+                    <img id="c10" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/justice.png" alt="">
+                    <img id="c11" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-hanged-man.png" alt="">
+                    <img id="c12" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/death.png" alt="">
+                    <img id="c13" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/temperance.png" alt="">
+                    <img id="c14" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-devil.png" alt="">
+                    <img id="c15" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-tower.png" alt="">
+                    <img id="c16" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-star.png" alt="">
+                    <img id="c17" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-moon.png" alt="">
+                    <img id="c18" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-sun.png" alt="">
+                    <img id="c19" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-hermit.png" alt="">
+                    <img id="c20" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/judgement.png" alt="">
+                    <img id="c21" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/the-world.png" alt="">
+
+                    <img id="c22" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/king-of-cups.png" alt="">
+                    <img id="c23" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/queen-of-cups.png" alt="">
+                    <img id="c24" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/knight-of-cups.png" alt="">
+                    <img id="c25" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/page-of-cups.png" alt="">
+                    <img id="c26" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/ten-of-cups.png" alt="">
+                    <img id="c27" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/nine-of-cups.png" alt="">
+                    <img id="c28" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/eight-of-cups.png" alt="">
+                    <img id="c29" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/seven-of-cups.png" alt="">
+                    <img id="c30" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/six-of-cups.png" alt="">
+                    <img id="c31" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/five-of-cups.png" alt="">
+                    <img id="c32" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/four-of-cups.png" alt="">
+                    <img id="c33" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/three-of-cups.png" alt="">
+                    <img id="c34" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/two-of-cups.png" alt="">
+                    <img id="c35" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/ace-of-cups.png" alt="">
+
+                    <img id="c36" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/king-of-swords.png" alt="">
+                    <img id="c37" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/queen-of-swords.png" alt="">
+                    <img id="c38" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/knight-of-swords.png" alt="">
+                    <img id="c39" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/page-of-swords.png" alt="">
+                    <img id="c40" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/ten-of-swords.png" alt="">
+                    <img id="c41" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/nine-of-swords.png" alt="">
+                    <img id="c42" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/eight-of-swords.png" alt="">
+                    <img id="c43" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/seven-of-swords.png" alt="">
+                    <img id="c44" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/six-of-swords.png" alt="">
+                    <img id="c45" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/five-of-swords.png" alt="">
+                    <img id="c46" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/four-of-swords.png" alt="">
+                    <img id="c47" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/three-of-swords.png" alt="">
+                    <img id="c48" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/two-of-swords.png" alt="">
+                    <img id="c49" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/ace-of-swords.png" alt="">
+
+                    <img id="c50" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/king-of-wands.png" alt="">
+                    <img id="c51" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/queen-of-wands.png" alt="">
+                    <img id="c52" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/knight-of-wands.png" alt="">
+                    <img id="c53" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/page-of-wands.png" alt="">
+                    <img id="c54" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/ten-of-wands.png" alt="">
+                    <img id="c55" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/nine-of-wands.png" alt="">
+                    <img id="c56" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/eight-of-wands.png" alt="">
+                    <img id="c57" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/seven-of-wands.png" alt="">
+                    <img id="c58" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/six-of-wands.png" alt="">
+                    <img id="c59" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/five-of-wands.png" alt="">
+                    <img id="c60" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/four-of-wands.png" alt="">
+                    <img id="c61" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/three-of-wands.png" alt="">
+                    <img id="c62" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/two-of-wands.png" alt="">
+                    <img id="c63" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/ace-of-wands.png" alt="">
+
+                    <img id="c64" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/king-of-pentacles.png" alt="">
+                    <img id="c65" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/queen-of-pentacles.png" alt="">
+                    <img id="c66" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/knight-of-pentacles.png" alt="">
+                    <img id="c67" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/page-of-pentacles.png" alt="">
+                    <img id="c68" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/ten-of-pentacles.png" alt="">
+                    <img id="c69" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/nine-of-pentacles.png" alt="">
+                    <img id="c70" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/eight-of-pentacles.png" alt="">
+                    <img id="c71" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/seven-of-pentacles.png" alt="">
+                    <img id="c72" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/six-of-pentacles.png" alt="">
+                    <img id="c73" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/five-of-pentacles.png" alt="">
+                    <img id="c74" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/four-of-pentacles.png" alt="">
+                    <img id="c75" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/three-of-pentacles.png" alt="">
+                    <img id="c76" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/two-of-pentacles.png" alt="">
+                    <img id="c77" class="shuffleDeck" onclick="flipMe(this)" data-index="0"
+                        data-src="https://www.trustedtarot.com/img/cards/ace-of-pentacles.png" alt="">
+                    <img id="c99" style="display: none;" class="shuffleDeck0"
+                        data-src="https://www.trustedtarot.com/images/small/back.gif" alt="">
+                </div>
+            </div>
+            <div class="col-4 col-md-4">
+                <div id="rightSide">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div id="rightSide05" class="right7to10"></div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div id="rightSide07" class="right7to10"></div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div id="rightSide04" class="right7to10"></div>
+                            </td>
+                            <td>
+                                <div id="rightSide01" class="right7to10"></div>
+                                <div id="rightSide02" class="right2"></div>
+                            </td>
+                            <td>
+                                <div id="rightSide06" class="right7to10"></div>
+                            </td>
+                            <td>
+                                <div id="rightSide08" class="right7to10"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div id="rightSide03" class="right7to10"></div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div id="rightSide09" class="right7to10"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div id="rightSide10" class="right7to10"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div id="rightReading">
+                    <h4>Interpretations</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- build:js js/main.js -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/tarot.js"></script>
+    <!-- endbuild -->
+
+</body>
+
+</html>
