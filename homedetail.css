@@ -19,8 +19,7 @@ body{
 }    
 
 #whatIDo,#aboutMe{
-    margin: 0;
-    padding: 30px;
+    padding: 30px 30px 30px 30px ;
     color: rgb(125, 185, 241);
 }
 
@@ -33,3 +32,10 @@ color:rgb(125, 185, 241);
 background-color:#1d0a2c;
 }
 
+#crystal{
+  margin: -20px;  
+}
+
+#magic{
+ margin-bottom: 10px;
+}
